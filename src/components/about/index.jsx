@@ -1,7 +1,7 @@
 const About = () => {
   return (
     <h3>
-      Welcome to <span style={{ fontWeight: "bold" }}>about</span>
+      Welcome to <span style={{ fontWeight: 200 }}>about</span>
     </h3>
   );
 };

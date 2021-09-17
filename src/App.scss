@@ -6,12 +6,10 @@
   margin: 0;
   padding: 0;
 
-  .nav-container {
-    position: relative;
+  .nav {
+    position: fixed;
+    padding: 2.5em;
     z-index: 999;
-    background: $light-coral;
-    width: 5em;
-    height: 5em;
   }
 
   .content {

@@ -10,8 +10,10 @@ function App() {
   return (
     <BrowserRouter>
       <main className="app">
-        <section className="content">
+        <nav>
           <Navbar />
+        </nav>
+        <section className="content">
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
