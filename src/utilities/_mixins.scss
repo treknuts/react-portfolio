@@ -1,0 +1,41 @@
+@mixin flex-center() {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@mixin ease-in-out() {
+  transition: all 150ms ease-in-out;
+}
+
+@mixin nav-btn() {
+  @include ease-in-out();
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 1em;
+  background: $light-coral;
+  padding: 1.15em;
+  border-radius: 100%;
+  color: $text-dark;
+
+  &:hover {
+    background: $surface-dark;
+    color: $text-light;
+  }
+}
+
+@mixin link() {
+  @include ease-in-out();
+  color: $text-dark;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  vertical-align: center;
+
+  &:hover {
+    background: $surface-dark;
+    color: $text-light;
+  }
+}

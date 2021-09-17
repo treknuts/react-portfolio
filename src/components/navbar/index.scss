@@ -1,0 +1,12 @@
+@import "../../utilities/_variables.scss";
+@import "../../utilities/_mixins.scss";
+
+.nav-item {
+  @include nav-btn();
+  opacity: 0;
+}
+
+.nav-btn {
+  @include nav-btn();
+  opacity: 1;
+}

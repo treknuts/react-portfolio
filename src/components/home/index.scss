@@ -1,0 +1,39 @@
+@import "../../utilities/_variables.scss";
+@import "../../utilities/_mixins.scss";
+
+.landing-info {
+  padding: auto;
+  margin-inline: auto;
+  display: grid;
+
+  img {
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    box-shadow: $shadow;
+  }
+
+  .name {
+    font-weight: 400;
+    font-size: 64px;
+  }
+  .title {
+    font-weight: lighter;
+    font-size: 24px;
+  }
+
+  .btn {
+    @include link();
+
+    width: min-content;
+    color: $text-light;
+    background: $surface-dark;
+    margin: 1em auto auto auto;
+
+    &:hover {
+      color: $text-dark;
+      background: $light-coral;
+    }
+  }
+}

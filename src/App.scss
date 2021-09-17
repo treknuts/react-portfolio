@@ -1,0 +1,23 @@
+@import "./utilities/_variables.scss";
+@import "./utilities/mixins";
+
+.app {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  .nav-container {
+    position: relative;
+    z-index: 999;
+    background: $light-coral;
+    width: 5em;
+    height: 5em;
+  }
+
+  .content {
+    position: relative;
+    height: 100%;
+    display: grid;
+    place-items: center;
+  }
+}
