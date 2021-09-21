@@ -18,41 +18,44 @@ const Navbar = () => {
   var tl = useRef();
 
   const handleClick = () => {
-    console.log(isOpen);
-    setIsOpen(!isOpen);
-    isOpen ? tl.current.reverse() : tl.current.play();
+    // Small screens only
+    // console.log(isOpen);
+    // setIsOpen(!isOpen);
+    // isOpen ? tl.current.reverse() : tl.current.play();
   };
 
   useEffect(() => {
-    tl.current = gsap
-      .timeline({ paused: true })
-      .to(homeIcon.current, {
-        x: 125,
-        y: 0,
-        ease: "back",
-        opacity: 1,
-        duration: 0.25,
-      })
-      .to(aboutIcon.current, {
-        x: 100,
-        y: 100,
-        ease: "back",
-        opacity: 1,
-        duration: 0.25,
-      })
-      .to(projectsIcon.current, {
-        x: 0,
-        y: 125,
-        ease: "back",
-        opacity: 1,
-        duration: 0.25,
-      });
+    // Only use this on small screens
+    // tl.current = gsap
+    //   .timeline({ paused: true })
+    //   .to(homeIcon.current, {
+    //     x: 125,
+    //     y: 0,
+    //     ease: "back",
+    //     opacity: 1,
+    //     duration: 0.25,
+    //   })
+    //   .to(aboutIcon.current, {
+    //     x: 100,
+    //     y: 100,
+    //     ease: "back",
+    //     opacity: 1,
+    //     duration: 0.25,
+    //   })
+    //   .to(projectsIcon.current, {
+    //     x: 0,
+    //     y: 125,
+    //     ease: "back",
+    //     opacity: 1,
+    //     duration: 0.25,
+    //   });
   }, []);
 
   return (
-    <div className="nav">
+    <nav className="nav">
       <Link to="/" className="nav-item" ref={homeIcon} onClick={handleClick}>
         <FontAwesomeIcon icon={faHome} size="lg" />
+        <p>home</p>
       </Link>
       <Link
         to="/about"
@@ -61,6 +64,7 @@ const Navbar = () => {
         onClick={handleClick}
       >
         <FontAwesomeIcon icon={faInfoCircle} size="lg" />
+        <p>about</p>
       </Link>
       <Link
         to="/projects"
@@ -69,11 +73,12 @@ const Navbar = () => {
         onClick={handleClick}
       >
         <FontAwesomeIcon icon={faClipboardList} size="lg" />
+        <p>projects</p>
       </Link>
       <div className="nav-btn" onClick={handleClick}>
         <FontAwesomeIcon icon={faBars} size="lg" />
       </div>
-    </div>
+    </nav>
   );
 };
 

@@ -1,0 +1,9 @@
+.card-container {
+  margin-top: 8em;
+  display: grid;
+  gap: 1em;
+  /* Ensure equal width columns */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 3em;
+  place-items: center;
+}

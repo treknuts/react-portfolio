@@ -1,8 +1,20 @@
+import Card from "./card";
+import "./index.scss";
+
 const Projects = () => {
   return (
-    <h3>
-      Welcome to <span style={{ fontWeight: 200 }}>projects</span>
-    </h3>
+    <div>
+      <div className="card-container">
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
+    </div>
   );
 };
 

@@ -27,8 +27,8 @@
     @include link();
 
     width: min-content;
-    color: $text-light;
-    background: $surface-dark;
+    color: $text-dark;
+    background: $surface-light;
     margin: 1em auto auto auto;
 
     &:hover {

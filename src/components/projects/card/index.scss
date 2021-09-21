@@ -1,0 +1,65 @@
+@import "../../../utilities/_variables.scss";
+@import "../../../utilities/_mixins.scss";
+
+.card {
+  font-family: $body-font;
+  padding: 1em;
+  background: $surface-light;
+  color: $text-dark;
+  border-radius: 5px;
+  margin: 1em;
+  box-shadow: $shadow;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .badge {
+    @include badge();
+  }
+
+  .badges {
+    margin-top: 0.5em;
+  }
+
+  .github {
+    @include flex-center();
+    width: min-content;
+    color: $text-light;
+    background: $surface-dark;
+    padding: 0.25em 0.5em;
+    border-radius: 5px;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: $shadow;
+    }
+
+    .icon {
+      margin-left: 0.25em;
+    }
+  }
+
+  .image-container {
+    @include flex-center();
+    img {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+    }
+  }
+
+  .javascript {
+    background: $javascript;
+  }
+  .react {
+    background: $react;
+  }
+  .mongo {
+    background: $mongo;
+  }
+  .node {
+    background: $node;
+  }
+}

@@ -39,3 +39,13 @@
     color: $text-light;
   }
 }
+
+@mixin badge() {
+  display: inline-grid;
+  justify-content: center;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin: 0 0.5em;
+  border-radius: 50em;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: $text-dark;
+}

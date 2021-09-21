@@ -1,4 +1,7 @@
-$font-family: "Helvetica", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+
+$heading-font: "Poppins", sans-serif;
+$body-font: "Poppins", sans-serif;
 $text-light: #ffffff;
 $text-dark: #161616;
 $surface-dark: #333333;
@@ -8,3 +11,15 @@ $shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
 
 $light-coral: #f08080;
 $royal-blue: #0265ff;
+
+$javascript: #fcdc00;
+$node: #6ebd4a;
+$python: #1652f0;
+$android: #3ddc84;
+$firebase: #ffa60f;
+$java: #dd3f31;
+$mysql: #4479a1;
+$laravel: #ff2d20;
+$vue: #41b883;
+$react: #61dafb;
+$mongo: #14a952;
