@@ -16,31 +16,21 @@ const Card = () => {
   const q = gsap.utils.selector(card);
 
   useEffect(() => {
-    gsap.from(card.current, {
-      y: 200,
-      opacity: 0.25,
-      stagger: 0.33,
-      ease: "ease-in-out",
-      scrollTrigger: {
-        trigger: card.current,
-        toggleActions: "restart none restart pause",
-        start: "top bottom",
-        end: "top 60%",
-        scrub: true,
-      },
-    });
-    gsap.from(q(".badge"), {
-      x: 50,
-      duration: 0.2,
-      opacity: 0,
-      stagger: 0.25,
-      scrollTrigger: {
-        trigger: q(".badge"),
-        toggleActions: "restart none restart pause",
-        start: "-200px 95%",
-        end: "-240px top",
-      },
-    });
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: q(".badge"),
+          toggleActions: "restart none restart pause",
+          start: () => "top bottom",
+          end: () => "bottom top",
+        },
+      })
+      .from(q(".badge"), {
+        x: 50,
+        duration: 0.2,
+        opacity: 0,
+        stagger: 0.25,
+      });
   }, []);
 
   return (
