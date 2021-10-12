@@ -1,39 +1,30 @@
-import { useEffect } from "react";
 import Card from "./card";
+import { motion } from "framer-motion";
 import "./index.scss";
-import gsap, { ScrollTrigger } from "gsap/all";
+
+const variants = {
+  open: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+  },
+  closed: {
+    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+  },
+};
 
 const Projects = () => {
-  useEffect(() => {
-    const cards = gsap.utils.toArray(".card");
-    cards.forEach((card) => {
-      gsap.from(card, {
-        y: 100,
-        z: 20,
-        opacity: 0.25,
-        scrollTrigger: {
-          trigger: card,
-          toggleActions: "restart none restart pause",
-          start: () => "top bottom",
-          end: () => "bottom 90%",
-          scrub: true,
-        },
-      });
-    });
-  }, []);
+  const cards = [0, 1, 2, 3, 4, 5];
+
   return (
-    <div>
-      <div className="card-container">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </div>
-    </div>
+    <motion.div
+      variants={variants}
+      initial="closed"
+      animate="open"
+      className="card-container"
+    >
+      {cards.map((i) => (
+        <Card key={i} />
+      ))}
+    </motion.div>
   );
 };
 

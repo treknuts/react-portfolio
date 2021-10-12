@@ -1,33 +1,42 @@
-import { useEffect, useRef } from "react";
 import "./index.scss";
-import { gsap } from "gsap";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const resumeUrl =
     "https://treknuts-image-bucket.s3.us-east-2.amazonaws.com/Resume.pdf";
   const profileUrl =
     "https://treknuts-image-bucket.s3.us-east-2.amazonaws.com/trevor.jpg";
-  const nameRef = useRef();
-  const titleRef = useRef();
 
-  useEffect(() => {
-    gsap.from(nameRef.current, { duration: 1, x: -500, opacity: 0 });
-    gsap.from(titleRef.current, { duration: 1, x: 500, opacity: 0 });
-  }, []);
+  const nameVariants = {
+    small: { x: 450 },
+    full: { x: 0 },
+  };
+
+  const titleVariants = {
+    left: { x: -400 },
+    center: { x: 0 },
+  };
 
   return (
     <div className="landing-info">
-      <img
-        src={profileUrl}
-        loading="lazy"
-        alt="The site creator intensily looking at the camera"
-      />
-      <h1 className="name" ref={nameRef}>
+      <motion.h1
+        initial="small"
+        animate="full"
+        variants={nameVariants}
+        transition={{ duration: 1 }}
+        className="name"
+      >
         Trevor Knutson
-      </h1>
-      <p className="title" ref={titleRef}>
+      </motion.h1>
+      <motion.p
+        initial="left"
+        animate="center"
+        variants={titleVariants}
+        transition={{ duration: 1 }}
+        className="title"
+      >
         Software Engineer
-      </p>
+      </motion.p>
       <a href={resumeUrl} rel="noreferrer" target="_blank" className="btn">
         resume
       </a>

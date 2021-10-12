@@ -1,41 +1,32 @@
-import gsap from "gsap/all";
-import { useEffect } from "react";
-import { ScrollTrigger } from "gsap/all";
-import { useRef } from "react/cjs/react.development";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { motion } from "framer-motion";
 import "./index.scss";
+
+const variant = {
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { stiffness: 1000, velocity: -100 },
+    },
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+    transition: {
+      y: { stiffness: 1000 },
+    },
+  },
+};
 
 const Card = () => {
   const imageUrl =
     "https://treknuts-image-bucket.s3.us-east-2.amazonaws.com/projects-images/chet-mockup.jpg";
 
-  gsap.registerPlugin(ScrollTrigger);
-
-  const card = useRef();
-  const q = gsap.utils.selector(card);
-
-  useEffect(() => {
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: q(".badge"),
-          toggleActions: "restart none restart pause",
-          start: () => "top bottom",
-          end: () => "bottom top",
-        },
-      })
-      .from(q(".badge"), {
-        x: 50,
-        duration: 0.2,
-        opacity: 0,
-        stagger: 0.25,
-      });
-  }, []);
-
   return (
-    <div className="card" ref={card}>
-      <div class="header">
+    <motion.div variants={variant} className="card">
+      <div className="header">
         <h1>ChetBot</h1>
         <a href="https://github.com/treknuts" className="github">
           Code <FontAwesomeIcon className="icon" icon={faGithub} size="lg" />
@@ -56,7 +47,7 @@ const Card = () => {
         <div className="badge mongo">MongoDB</div>
         <div className="badge node">NodeJs</div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
