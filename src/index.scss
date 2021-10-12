@@ -1,4 +1,5 @@
 @import "./utilities/_variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 body {
   margin: 0;
@@ -24,7 +25,6 @@ body {
   h4,
   h5 {
     font-family: $heading-font;
-    font-weight: bold;
     margin: 0;
     padding: 0;
   }

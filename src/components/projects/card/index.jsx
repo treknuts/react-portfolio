@@ -8,7 +8,7 @@ const variant = {
     y: 0,
     opacity: 1,
     transition: {
-      y: { stiffness: 1000, velocity: -100 },
+      y: { stiffness: 500, velocity: -100 },
     },
   },
   closed: {
@@ -28,9 +28,9 @@ const Card = () => {
     <motion.div variants={variant} className="card">
       <div className="header">
         <h1>ChetBot</h1>
-        <a href="https://github.com/treknuts" className="github">
+        <motion.a href="https://github.com/treknuts" className="github" whileHover={{ scale: 1.05, y: -3 }} whileTap={{ scale: .95, y: 0 }}>
           Code <FontAwesomeIcon className="icon" icon={faGithub} size="lg" />
-        </a>
+        </motion.a>
       </div>
       <div className="image-container">
         <img src={imageUrl} alt="Thumbnail of a project in action." />
