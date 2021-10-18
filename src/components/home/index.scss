@@ -28,11 +28,10 @@
 
     width: min-content;
     color: $text-dark;
-    background: $surface-light;
     margin: 1em auto auto auto;
+    
 
     &:hover {
-      color: $text-dark;
       background: $light-coral;
     }
   }

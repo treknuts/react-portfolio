@@ -1,5 +1,14 @@
-.card-container {
+@import "../../utilities/variables.scss";
+@import "../../utilities/_mixins.scss";
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 6em;
+}
+
+.card-container {
   display: grid;
   gap: 1em;
   /* Ensure equal width columns */
@@ -7,3 +16,36 @@
   padding: 3em;
   place-items: center;
 }
+
+  .badge {
+    @include badge();
+  }
+
+  .javascript {
+    border-color: $javascript;
+
+    &:hover {
+      background: $javascript;
+    }
+  }
+  .react {
+    border-color: $react;
+
+    &:hover {
+      background: $react;
+    }
+  }
+  .mongo {
+    border-color: $mongo;
+
+    &:hover {
+      background: $mongo;
+    }
+  }
+  .node {
+    border-color: $node;
+
+    &:hover {
+      background: $node;
+    }
+  }

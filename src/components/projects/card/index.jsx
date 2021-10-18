@@ -8,6 +8,7 @@ const variant = {
     y: 0,
     opacity: 1,
     transition: {
+      duration: 1,
       y: { stiffness: 500, velocity: -100 },
     },
   },
@@ -15,9 +16,12 @@ const variant = {
     y: 50,
     opacity: 0,
     transition: {
+      duration: 3,
       y: { stiffness: 1000 },
     },
-  },
+  }, whileHover: {
+    y: -10
+  }
 };
 
 const Card = () => {
@@ -25,7 +29,7 @@ const Card = () => {
     "https://treknuts-image-bucket.s3.us-east-2.amazonaws.com/projects-images/chet-mockup.jpg";
 
   return (
-    <motion.div variants={variant} className="card">
+    <motion.div initial={variant.closed} animate={variant.open} whileHover={variant.whileHover} className="card">
       <div className="header">
         <h1>ChetBot</h1>
         <motion.a href="https://github.com/treknuts" className="github" whileHover={{ scale: 1.05, y: -3 }} whileTap={{ scale: .95, y: 0 }}>
@@ -41,12 +45,6 @@ const Card = () => {
         molestiae corrupti doloremque hic tempora odit. Eveniet sunt qui
         exercitationem dignissimos aperiam.
       </p>
-      <div className="badges">
-        <div className="badge react">React</div>
-        <div className="badge javascript">JavaScript</div>
-        <div className="badge mongo">MongoDB</div>
-        <div className="badge node">NodeJs</div>
-      </div>
     </motion.div>
   );
 };

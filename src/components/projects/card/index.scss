@@ -15,10 +15,6 @@
     justify-content: space-between;
   }
 
-  .badge {
-    @include badge();
-  }
-
   .badges {
     margin-top: 0.5em;
   }
@@ -43,18 +39,5 @@
       max-width: 250px;
       height: auto;
     }
-  }
-
-  .javascript {
-    background: $javascript;
-  }
-  .react {
-    background: $react;
-  }
-  .mongo {
-    background: $mongo;
-  }
-  .node {
-    background: $node;
   }
 }

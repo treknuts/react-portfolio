@@ -3,28 +3,50 @@ import { motion } from "framer-motion";
 import "./index.scss";
 
 const variants = {
-  open: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-  },
-  closed: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 },
-  },
+  hidden: {opacity: 0},
+  show: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.75,
+      staggerDirection: -1,
+    }
+  }
+};
+
+const badge = {
+  hidden: { y: -10, opacity: 0},
+  show: { y: 0, opacity: 1},
+  whileHover: {
+    rotate: "-8deg",
+    transformOrigin: "left bottom"
+  }
 };
 
 const Projects = () => {
   const cards = [0, 1, 2, 3, 4, 5];
 
+  // whileHover={{ rotate: "-8deg", transformOrigin: "left bottom"}}
+
   return (
-    <motion.div
+    <div className="content">
+      <h1>Technologies</h1>
+      <motion.div variants={variants} className="badges">
+        <motion.div initial={badge.hidden} animate={badge.show} whileHover={badge.whileHover} className="badge javascript">Javascript</motion.div>
+        <motion.div initial={badge.hidden} animate={badge.show} whileHover={badge.whileHover} className="badge node">NodeJs</motion.div>
+        <motion.div initial={badge.hidden} animate={badge.show} whileHover={badge.whileHover} className="badge react">React</motion.div>
+        <motion.div initial={badge.hidden} animate={badge.show} whileHover={badge.whileHover} className="badge mongo">Mongo</motion.div>
+      </motion.div>
+<motion.div
       variants={variants}
-      initial="closed"
-      animate="open"
+      initial={variants.hidden}
+      animate={variants.show}
       className="card-container"
     >
       {cards.map((i) => (
         <Card key={i} />
       ))}
     </motion.div>
+    </div>
   );
 };
 

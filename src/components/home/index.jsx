@@ -37,9 +37,9 @@ const Home = () => {
       >
         Software Engineer
       </motion.p>
-      <a href={resumeUrl} rel="noreferrer" target="_blank" className="btn">
+      <motion.a href={resumeUrl} whileHover={{ y: -5 }} whileHover={{ scale: 1.05, y: -3 }} whileTap={{ scale: .95, y: 0 }} rel="noreferrer" target="_blank" className="btn">
         resume
-      </a>
+      </motion.a>
     </div>
   );
 };
