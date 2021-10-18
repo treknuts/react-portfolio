@@ -29,10 +29,13 @@
     width: min-content;
     color: $text-dark;
     margin: 1em auto auto auto;
-    
 
-    &:hover {
-      background: $light-coral;
+&:hover {
+      border-color: $light-coral;
+      background: $royal-blue;
+      color: $text-light;
+      cursor: pointer;
     }
+    
   }
 }

@@ -1,6 +1,10 @@
 @import "./utilities/_variables.scss";
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -9,6 +13,10 @@ body {
   color: $text-dark;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  svg {
+    overflow: visible;
+  }
 
   ul {
     list-style-type: none;
